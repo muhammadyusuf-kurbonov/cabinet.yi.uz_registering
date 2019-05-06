@@ -8,6 +8,9 @@ pupils = list()
 infos = open("infos.txt", mode="r", encoding="utf-8")
 try:
     for line in infos:
+        if line.startswith("#"):
+            continue
+
         parts = line.split('\t')
         pupil = Pupil.Pupil()
 
