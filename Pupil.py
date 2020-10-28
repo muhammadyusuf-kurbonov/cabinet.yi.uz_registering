@@ -1,14 +1,34 @@
 import json.decoder
 import json.encoder
-from bin.Consts import *
 
 
-class Youth:
+class Tumanlar:
+    qoshtepa = range(7615, 7664 + 1)
+    qoshtepa_code = '158'
+
+    toshloq = range(7958, 8008 + 1)
+    toshloq_code = '164'
+
+    margilon = range(8386, 8489 + 1)
+    margilon_code = '172'
+
+    fargona = range(8218, 8287 + 1)
+    fargona_code = '169'
+
+
+class Pupil:
     name: str
     lastName: str
     surname: str
     gender: str
     birthday: str
+
+    pupil_type: str = "pupil"
+
+    course: str
+    school_region: str
+    school_tuman: str
+    school_id: str
 
     document_type: str
     series: str
@@ -59,17 +79,3 @@ class Youth:
     @staticmethod
     def fromJSON(string):
         return json.decoder.JSONDecoder().decode(string)
-
-
-class Pupil(Youth):
-    pupil_type: str = "pupil"
-
-    course: str
-    school_region: str
-    school_tuman: str
-    school_id: str
-
-
-class Teenager(Youth):
-    status: str
-    info: str
